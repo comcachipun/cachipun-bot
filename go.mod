@@ -1,3 +1,3 @@
-module github.com/comcachipun/entrenador-cachipun
+module github.com/comcachipun/cachipun-bot
 
 go 1.16

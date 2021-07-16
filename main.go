@@ -91,7 +91,7 @@ func Handle(conn net.Conn) {
 				return
 			}
 			opt := Jugada(resp)
-			jugada := Jugadas[rand.Int()%3][turn%TIMES_TO_WIN]
+			jugada := Jugadas[rand.Int()%3][(turn-1)%TIMES_TO_WIN]
 			conn.Write([]byte(fmt.Sprintf("Jugaste %s.\n", NombresJugadas[opt])))
 			conn.Write([]byte(fmt.Sprintf("Yo jugué %s.\n\n", NombresJugadas[jugada])))
 			switch opt.Play(jugada) {
