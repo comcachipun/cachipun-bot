@@ -68,7 +68,7 @@ func Handle(conn net.Conn) {
 		gameStyle := rand.Int() % 3
 		for {
 			if wins == TIMES_TO_WIN {
-				conn.Write([]byte(fmt.Sprintf("¡Ganaste!\n\nLa Flag es %s=\n\n", os.Getenv("FLAG"))))
+				conn.Write([]byte(fmt.Sprintf("¡Ganaste!\n\nLa Flag es %s\n\n", os.Getenv("FLAG"))))
 				return
 			}
 			conn.Write([]byte(fmt.Sprintf("[Turno %d / Perdí: %d]\nEscribe tu opción:\n1) PIEDRA\n2) PAPEL\n3) TIJERAS\n\n>>> ", turn, wins)))
